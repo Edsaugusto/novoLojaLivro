@@ -2,10 +2,13 @@ package com.cursoSpring.lojaDeLivros.dominio;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Livro implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,6 +20,7 @@ public class Livro implements Serializable {
     private String nomeAutor;
     private String texto;
 
+    @ManyToOne
     private Categoria categoria;
 
     public Livro(Long id, String titulo, String nomeAutor, String texto, Categoria categoria) {
